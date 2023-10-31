@@ -1,5 +1,5 @@
 // Image
-import illustration from "../../assest/home-cover-img/home.png";
+import illustration from "../../assest/home-cover-img/business.jpg";
 
 // hooks
 import { useEffect } from "react";
@@ -23,12 +23,12 @@ export const Home = () => {
       {/* Navbar import */}
       <Navbar />
       <main className="flex items-center justify-center w-full py-20">
-        <section className="max-w-screen-xl flex flex-wrap md:justify-between justify-center items-center lg:pl-8 w-[95%]">
+        <section className="max-w-screen-xl grid grid-cols-2 max-[700px]:grid-cols-1 max-[810px]:justify-items-center items-center lg:pl-8 w-[95%]">
           <div>
-            <h1 className="md:text-3xl text-xl font-semibold text-mediumgrey mb-8">
+            <h1 className="md:text-3xl text-xl font-semibold text-mediumgrey mb-5">
               WE LAUNCH YOUR IDEAS !
             </h1>
-            <h1 className="text-4xl max-md:text-3xl font-bold text-secondary mb-1">
+            <h1 className="text-4xl max-[700px]:text-3xl font-bold text-secondary mb-1">
               Build business Mobile and <br />{" "}
               <span className="mb-3">web app with our</span>
             </h1>
@@ -43,7 +43,7 @@ export const Home = () => {
           {/* image */}
           <div>
             <img
-              className="bg-cover bg-no-repeat max-w-[400px] max-lg:w-[270px] block max-md:hidden"
+              className="object-cover h-full block max-[700px]:hidden w-full"
               src={illustration}
               alt="not found"
             />

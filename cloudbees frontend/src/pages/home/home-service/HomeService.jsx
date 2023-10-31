@@ -12,13 +12,12 @@ export const HomeService = () => {
         Provide Awesome Services To You
       </h1>
 
-      <section className="w-full relative bg-primary2 flex items-center justify-center">
+      <section className="w-full relative flex items-center justify-center">
         <div className="bg-primary w-full h-20 absolute"></div>
         {/* Service Card */}
         <div className="max-w-screen-xl w-[95%]">
-        <ServicesCard />
+          <ServicesCard />
         </div>
-        
       </section>
     </main>
   );

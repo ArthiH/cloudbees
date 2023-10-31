@@ -31,7 +31,6 @@ export const Navbar = () => {
               alt="not found"
               width="100%"
             />
-         
           </div>
           <div className="hidden md:block">
             <ul className="flex text-primary font-medium">
@@ -46,9 +45,14 @@ export const Navbar = () => {
                 </NavLink>
               </li>
               <li className="p-3">
-                <a className="active:text-white">
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-bold" : ""
+                  }
+                >
                   About
-                </a>
+                </NavLink>
               </li>
               <li className="p-3">
                 <NavLink
@@ -124,14 +128,14 @@ export const Sidebar = (props) => {
             </NavLink>
           </li>
           <li>
-            <a
-              href="#about"
+            <NavLink
+              to="\about"
               className={({ isActive }) =>
                 isActive ? "text-white font-bold" : ""
               }
             >
               About
-            </a>
+            </NavLink>
           </li>
           <li>
             <NavLink
