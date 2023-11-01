@@ -6,8 +6,14 @@ import T1 from "../../assest/about/T111.avif";
 import T2 from "../../assest/about/T2.jpg";
 import T3 from "../../assest/about/T3.jpg";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa6";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 export const About = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <Navbar />
