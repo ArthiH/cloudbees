@@ -19,7 +19,7 @@ export const ContactUs = () => {
           {/* Map linked */}
           <iframe
             className="w-full h-full max-md:h-[450px]"
-            src="https://www.google.com/maps/d/embed?mid=1YFYwl_GTfy-R_78RRN-JpIQfLKHYDPM&ehbc=2E312F" 
+            src="https://www.google.com/maps/d/embed?mid=1YFYwl_GTfy-R_78RRN-JpIQfLKHYDPM&ehbc=2E312F"
             sallowfullscreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -67,7 +67,6 @@ export const Form = () => {
       axios({
         method: "post",
         url: "localhost:5000/contactinfo/add",
-
         data: data,
       });
     } catch (error) {

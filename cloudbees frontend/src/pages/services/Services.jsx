@@ -38,12 +38,12 @@ export const Service = () => {
 
           {/* our feature start */}
           <section>
-            <h3 className="uppercase text-primary text-4xl py-5 pb-10 font-semibold text-center">
+            <h3 className="uppercase max-sm:text-3xl text-primary text-4xl py-5 pb-10 font-semibold text-center">
               Our Best Features
             </h3>
             <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-5 w-full">
               <img className="w-full  my-auto" src={feature} />
-              <div className="px-5">
+              <div className="px-5 max-lg:text-center">
                 <h1 className="text-3xl font-medium my-5">
                   Helping you grow at every Step
                 </h1>
@@ -65,7 +65,7 @@ export const Service = () => {
 
           {/* our service start */}
           <section className=" mt-10 ">
-            <h3 className="uppercase text-primary text-4xl py-10 font-semibold text-center">
+            <h3 className="uppercase max-sm:text-3xl text-primary text-4xl py-10 font-semibold text-center">
               Our Best Services
             </h3>
             <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 lg:p-4 py-3 rounded my-5 mb-14">

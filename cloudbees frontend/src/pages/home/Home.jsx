@@ -24,7 +24,7 @@ export const Home = () => {
       <Navbar />
       <main className="flex items-center justify-center w-full py-20">
         <section className="max-w-screen-xl grid grid-cols-2 max-[700px]:grid-cols-1 max-[810px]:justify-items-center items-center lg:pl-8 w-[95%]">
-          <div>
+          <div className="max-[700px]:text-center">
             <h1 className="md:text-3xl text-xl font-semibold text-mediumgrey mb-5">
               WE LAUNCH YOUR IDEAS !
             </h1>

@@ -129,7 +129,7 @@ export const Sidebar = (props) => {
           </li>
           <li>
             <NavLink
-              to="\about"
+              to="/about"
               className={({ isActive }) =>
                 isActive ? "text-white font-bold" : ""
               }
