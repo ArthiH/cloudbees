@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 mongoose
-  .connect("mongodb+srv://b2vtechnology:QidO69qXKZdYCYuh@cluster0.cv4hyu6.mongodb.net/", {
+  .connect("mongodb://0.0.0.0:27017/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -14,5 +15,4 @@ mongoose
 
 module.exports = mongoose.connection;
 
-// mongodb+srv://b2vtechnology:QidO69qXKZdYCYuh@cluster0.cv4hyu6.mongodb.net/
-// mongodb://0.0.0.0:27017/
+//  `mongodb+srv://${process.env.USERNAME_DB}:${process.env.PASSWORD_DB}@cluster0.cv4hyu6.mongodb.net/`,

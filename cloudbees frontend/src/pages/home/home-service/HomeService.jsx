@@ -1,77 +1,73 @@
-import { HiMiniComputerDesktop } from "react-icons/hi2";
-import { CiMobile3 } from "react-icons/ci";
-import { BiBrain } from "react-icons/bi";
+import services from "../../../assest/home_services/services.jpg";
 
 export const HomeService = () => {
   return (
-    <main className="flex flex-col items-center">
-      <h4 className="text-primary text-4xl font-semibold mt-20 mb-3">
-        SERVICES
-      </h4>
-      <h1 className="sm:text-4xl text-3xl mx-3 text-center font-medium mt-5 mb-16">
-        Provide Awesome Services To You
-      </h1>
-
-      <section className="w-full relative flex items-center justify-center">
-        <div className="bg-primary w-full h-20 absolute"></div>
-        {/* Service Card */}
-        <div className="max-w-screen-xl w-[95%]">
-          <ServicesCard />
-        </div>
-      </section>
+    <main className="grid grid-cols-2 my-28 max-[1020px]:grid-cols-1">
+      <ServicesDetails />
+      <div className="relative max-[1020px]:hidden bg-ashgrey rounded-l-3xl flex justify-center items-center px-20 pb-10">
+        <img
+          className="object-cover w-full min-w-[300px]"
+          src={services}
+          alt="not found"
+        />
+      </div>
     </main>
   );
 };
 
-export const ServicesCard = () => {
+export const ServicesDetails = () => {
   return (
-    <main className="relative flex justify-center items-center flex-wrap w-full gap-6 sm:m-4 z-20 px-4">
-      {/* Card1 */}
-      <div className="flex flex-col justify-center items-center sm:max-w-sm gap-4 lg:p-4 py-3 rounded overflow-hidden shadow-2xl bg-mediumgrey">
-        <article>
-          <HiMiniComputerDesktop className="text-primary lg:text-9xl text-5xl" />
-        </article>
-        <article className="flex flex-col items-center px-4">
-          <h3 className="text-mediumyellow text-xl  font-semibold mb-3">
-            Strategy & Research
-          </h3>
-          <p className="text-white text-center">
-            It is separate from most operational activities performed by a
-            corporation. The research and/or development is typically not
-            performed with the expectation of immediate profit.
-          </p>
-        </article>
+    <section className="max-w-screen-xl w-[95%] ml-8 z-10 max-[1020px]:p-8 max-[1020px]:m-0">
+      <h1 className="text-primary text-3xl mb-5 font-semibold relative left-9 max-[1020px]:left-0 max-[1020px]:text-center max-[1020px]:text-3xl max-[1020px]:font-bold max-[1020px]:mb-16">
+        Services
+      </h1>
+      <div className="flex flex-col gap-5">
+        {SD.map((value, index) => {
+          return (
+            <div
+              key={index}
+              className="border-r-[12px] rounded-2xl bg-white odd:border-primary even:border-secondary relative max-[800px]:text-center max-[900px]:border-l-[12px] max-[900px]:border-r-[0px] max-[800px]:border-t-[12px] max-[800px]:border-l-[0px] -right-10 max-[1020px]:-right-0 last:mb-5"
+            >
+              <section
+                key={index}
+                className="relative border-ashgrey border-2 rounded-md p-3"
+              >
+                <h1 className="text-secondary text-xl font-semibold mb-1">
+                  {value.title}
+                </h1>
+                <p className="text-litegrey text-sm">{value.p}</p>
+              </section>
+            </div>
+          );
+        })}
       </div>
-
-      {/* Card2 */}
-      <div className="flex flex-col items-center gap-4 lg:p-4 py-3 sm:max-w-sm rounded overflow-hidden shadow-2xl bg-mediumgrey">
-        <CiMobile3 className="text-primary lg:text-[8rem] text-5xl " />
-        <article className="flex flex-col items-center px-4">
-          <h3 className="text-mediumyellow text-xl  font-semibold mb-3">
-            Web Development
-          </h3>
-          <p className="text-white text-center">
-            It is separate from most operational activities performed by a
-            corporation. The research and/or development is typically not
-            performed with the expectation of immediate profit.
-          </p>
-        </article>
-      </div>
-
-      {/* Card3 */}
-      <div className="flex flex-col items-center gap-4 lg:p-4 py-3 sm:max-w-sm rounded overflow-hidden shadow-2xl bg-mediumgrey">
-        <BiBrain className="text-primary lg:text-[8rem] text-5xl" />
-        <article className="flex flex-col items-center px-4">
-          <h3 className="text-mediumyellow text-xl  font-semibold mb-3">
-            Web Solution
-          </h3>
-          <p className="text-white text-center">
-            It is separate from most operational activities performed by a
-            corporation. The research and/or development is typically not
-            performed with the expectation of immediate profit.
-          </p>
-        </article>
-      </div>
-    </main>
+    </section>
   );
 };
+
+export const SD = [
+  {
+    title: "Digital Marketing",
+    p: "Digital marketing is the strategic use of online channels such as social media, search engines, and email to promote products or services, driving brand awareness and customer engagement in the digital realm.",
+  },
+  {
+    title: "Web Development",
+    p: "Web development is about building websites and web applications using languages like HTML, CSS, and JavaScript. Front-end work focuses on how things look and feel, while back-end development handles the behind-the-scenes functionality.",
+  },
+  {
+    title: "Mobile Native & Hybrid",
+    p: "Mobile native development involves creating apps specifically for a single platform, like iOS or Android, utilizing platform-specific languages and tools for optimal performance.",
+  },
+  {
+    title: "UI/UX Design",
+    p: " UI/UX design collaboratively addresses both the look and feel of a product, aiming to optimize user engagement and satisfaction by combining visually appealing interfaces with intuitive and user-friendly experiences.",
+  },
+  {
+    title: "AWS/Azure Cloud",
+    p: "AWS (Amazon Web Services) and Azure (Microsoft Azure) are leading cloud computing platforms, providing a vast array of scalable and on-demand computing resources.",
+  },
+  {
+    title: "CI/CD DevOps",
+    p: "Continuous Integration/Continuous Deployment (CI/CD) in DevOps is a software development approach that automates the building, testing, and deployment of applications.",
+  },
+];

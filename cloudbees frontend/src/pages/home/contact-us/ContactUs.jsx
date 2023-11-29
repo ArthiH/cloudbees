@@ -18,7 +18,7 @@ export const ContactUs = () => {
         <section className="max-w-screen-xl w-[95%] grid md:grid-cols-2 overflow-hidden grid-cols-1 sm:p-4">
           {/* Map linked */}
           <iframe
-            className="w-full h-full max-md:h-[450px]"
+            className="w-full h-full max-md:h-[450px] touch-none"
             src="https://www.google.com/maps/d/embed?mid=1YFYwl_GTfy-R_78RRN-JpIQfLKHYDPM&ehbc=2E312F"
             sallowfullscreen=""
             loading="lazy"
@@ -63,15 +63,17 @@ export const Form = () => {
 
   // server connections
   function createStudentFunc(data) {
-    try {
-      axios({
-        method: "post",
-        url: "localhost:5000/contactinfo/add",
-        data: data,
+    axios({
+      method: "post",
+      url: "http://localhost:5000/contactdata/add",
+      data: data,
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.error(error);
       });
-    } catch (error) {
-      console.log("error", error);
-    }
   }
 
   return (

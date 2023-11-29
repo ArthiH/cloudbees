@@ -1,15 +1,15 @@
 import { Footer } from "../footer/Footer";
 import { Navbar } from "../navbar/Navbar";
-import about from "../../assest/about/about.png";
+import about from "../../assest/about/about_1.jpg";
 import mission from "../../assest/about/mission.jpg";
-import T1 from "../../assest/about/t1.avif";
-import T2 from "../../assest/about/t2.avif";
-import T3 from "../../assest/about/t3.avif";
-import T4 from "../../assest/about/t4.avif";
-import T5 from "../../assest/about/t5.avif";
-import T6 from "../../assest/about/t6.avif";
-import T7 from "../../assest/about/t7.avif";
-import T8 from "../../assest/about/t8.avif";
+import T1 from "../../assest/about/US_T1.jpg";
+import T2 from "../../assest/about/US_T2.jpg";
+import IND_T3 from "../../assest/about/IND_T3.jpg";
+import IND_T4 from "../../assest/about/IND_T4.jpg";
+import IND_T5 from "../../assest/about/IND_T5.jpg";
+import T7 from "../../assest/about/t5.avif";
+import IND_T1 from "../../assest/about/IND_T1.jpeg";
+import T8 from "../../assest/about/IND_T8.jpg";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
@@ -28,9 +28,9 @@ export const About = () => {
             About Us
           </h1>
           <section className="grid grid-cols-2 max-[1020px]:grid-cols-1 max-[1120px]:justify-items-center items-center">
-            <div className="h-[450px] w-[450px] rounded-full relative bg-primary ml-20 max-sm:mr-10 -z-10 max-md:h-72  max-md:w-72">
+            <div className="h-[400px] w-[400px] rounded-full relative bg-primary ml-20 max-sm:mr-10 -z-10 max-md:h-72  max-md:w-72">
               <img
-                className=" w-full object-cover rounded-full absolute -left-[10%] top-[15%]"
+                className=" w-full object-cover rounded-full absolute -left-[10%] top-[15%] shadow-lg"
                 src={about}
                 alt="not found"
               />
@@ -56,7 +56,7 @@ export const About = () => {
         </div>
       </main>
       <Mission />
-      <UsTeam />
+      <UsaTeam />
       <IndiaTeam />
       <Footer />
     </>
@@ -103,12 +103,12 @@ export const Mission = () => {
   );
 };
 
-export const UsTeam = () => {
+export const UsaTeam = () => {
   return (
     <main className="mt-16">
       <div className="h-2 w-full bg-secondary relative">
         <h1 className="absolute left-[20%] max-[500px]:left-2/4 max-[500px]:-translate-x-1/2  top-2/4 -translate-y-1/2 bg-white px-4 text-2xl text-primary font-bold">
-          Team US
+          USA Frontiers
         </h1>
       </div>
       <section className="max-w-screen-xl w-[95%] mx-auto">
@@ -117,9 +117,9 @@ export const UsTeam = () => {
             return (
               <section
                 key={index}
-                className="border-2 border-primary max-sm:min-w-[300px] min-w-[350px] w-[350px] rounded-tr-[50px] rounded-tl-[50px]"
+                className="border-2 border-primary min-w-[300px] w-[300px] rounded-tr-[50px] rounded-tl-[50px]"
               >
-                <div className="h-24 rounded-tr-[50px] rounded-tl-[50px] bg-mediumgrey relative">
+                <div className="h-24 rounded-tr-[50px] rounded-tl-[50px] bg-gradient-to-r from-mediumgrey  to-mediumyellow relative">
                   <div className="absolute -bottom-10 left-2/4 -translate-x-1/2 border-4 border-primary max-w-[100px]  rounded-full">
                     <img
                       className="object-fit w-full rounded-full"
@@ -129,15 +129,15 @@ export const UsTeam = () => {
                   </div>
                 </div>
 
-                <article className="text-center mt-16 px-8">
-                  <h1 className="text-3xl text-primary font-bold">
-                    {value.h1}
-                  </h1>
-                  <h2 className="text-xl text-mediumgrey font-semibold pt-2">
+                <article className="text-center mt-16">
+                  <h1 className="text-xl text-primary font-bold">{value.h1}</h1>
+                  <h2 className="text-lg text-mediumgrey font-semibold pt-2">
                     {value.h2}
                   </h2>
-                  <p className="text-sm text-litegrey my-4 h-12">{value.p}</p>
-                  <article className="flex gap-5 justify-center mb-5 items-end">
+                  <p className="text-sm text-litegrey my-4 h-12 px-5">
+                    {value.p}
+                  </p>
+                  <div className="flex gap-10 justify-center mb-5 bg-gradient-to-r from-primary to-mediumgrey items-end text-xl text-white py-2">
                     <span>
                       <FaFacebookF />
                     </span>
@@ -147,7 +147,7 @@ export const UsTeam = () => {
                     <span>
                       <FaInstagram />
                     </span>
-                  </article>
+                  </div>
                 </article>
               </section>
             );
@@ -161,20 +161,20 @@ export const IndiaTeam = () => {
   return (
     <main>
       <div className="h-2 w-full bg-secondary relative">
-        <h1 className="absolute left-[20%] max-[500px]:left-2/4 max-[500px]:-translate-x-1/2  top-2/4 -translate-y-1/2 bg-white px-4 max-sm:px-2 text-2xl text-primary font-bold">
-          Team India
+        <h1 className="absolute  left-[20%] max-[500px]:left-2/4 max-[500px]:-translate-x-1/2  top-2/4 -translate-y-1/2 bg-white px-4 max-sm:px-2 text-2xl text-primary font-bold">
+          India Frontiers
         </h1>
       </div>
       <section className="max-w-screen-xl w-[95%] mx-auto">
-        <div className="my-20 grid grid-cols-3 gap-14 max-[800px]:justify-items-center max-[800px]:grid-cols-1 max-[1150px]:grid-cols-2 p-10">
+        <div className="my-20 grid grid-cols-3 gap-14 justify-items-center max-[800px]:grid-cols-1 max-[1150px]:grid-cols-2 p-10">
           {Team.slice(2).map((value, index) => {
             return (
               <section
                 key={index}
-                className="border-2 border-primary max-sm:min-w-[300px] min-w-[350px] rounded-tr-[50px] rounded-tl-[50px]"
+                className="border-2 border-primary bg-white min-w-[300px] w-[300px] rounded-tr-[50px] rounded-tl-[50px]"
               >
-                <div className="h-24 rounded-tr-[50px] rounded-tl-[50px] bg-mediumgrey relative">
-                  <div className="absolute -bottom-10 left-2/4 -translate-x-1/2 border-4 border-primary max-w-[100px]  rounded-full">
+                <div className="h-28 rounded-tr-[50px]  rounded-tl-[50px] bg-gradient-to-r from-mediumgrey  to-mediumyellow relative">
+                  <div className="absolute -bottom-10 left-2/4 -translate-x-1/2 border-4 border-primary max-w-[120px]  rounded-full">
                     <img
                       className="object-fit w-full rounded-full"
                       src={value.img}
@@ -183,15 +183,15 @@ export const IndiaTeam = () => {
                   </div>
                 </div>
 
-                <article className="text-center mt-16 px-8">
-                  <h1 className="text-2xl text-primary font-bold">
-                    {value.h1}
-                  </h1>
-                  <h2 className="text-xl text-mediumgrey font-semibold py-2">
+                <article className="text-center mt-16">
+                  <h1 className="text-xl text-primary font-bold">{value.h1}</h1>
+                  <h2 className="text-lg text-mediumgrey font-semibold py-2">
                     {value.h2}
                   </h2>
-                  <p className="text-sm text-litegrey mb-5">{value.p}</p>
-                  <article className="flex gap-5 justify-center mb-5 items-center">
+                  <p className="text-sm text-litegrey mb-5 px-3 h-16 flex items-center justify-center">
+                    {value.p}
+                  </p>
+                  <div className="flex gap-10 justify-center mb-5 bg-gradient-to-r from-primary to-mediumgrey items-end text-xl text-white py-2">
                     <span>
                       <FaFacebookF />
                     </span>
@@ -201,7 +201,7 @@ export const IndiaTeam = () => {
                     <span>
                       <FaInstagram />
                     </span>
-                  </article>
+                  </div>
                 </article>
               </section>
             );
@@ -221,39 +221,39 @@ export const Team = [
   },
   {
     img: T2,
-    h1: "LEEMA VIDHYA",
+    h1: "LEEMAVIDHYA",
     h2: "Delivery/QA Head",
     p: "Web,Mobile,Automation",
   },
   {
-    img: T6,
+    img: IND_T1,
     h1: "KARTHIK",
-    h2: "Architect",
-    p: "Web,API,Cloud",
+    h2: "Senior Consultant",
+    p: "Collaboration,Communication Skills,Apex, Triggers, Apex Data Loader",
   },
   {
-    img: T5,
+    img: T7,
     h1: "BALACHANDER",
     h2: "Architect",
     p: "IOS SDK,Objective-C,swift,Flutter,Dart,AWS Amplify,Jira,MVVM,MVC",
   },
   {
-    img: T3,
+    img: IND_T3,
     h1: "MOHAMED IJASS",
     h2: "UI/UX Lead",
-    p: "Adobe XD,Figma ",
+    p: "Adobe XD,Figma,Web design,Interaction design ",
   },
   {
-    img: T7,
+    img: IND_T4,
     h1: "ARTHI",
     h2: "Web Developer",
     p: "Javascript,React,Node,Express",
   },
   {
-    img: T4,
+    img: IND_T5,
     h1: "SHUNMUGAM RAJA",
     h2: "Mobile Developer",
-    p: "Javascript,React,React NativeFlutter",
+    p: "Javascript,React,React Native,Flutter",
   },
   {
     img: T8,

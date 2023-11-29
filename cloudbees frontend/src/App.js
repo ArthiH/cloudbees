@@ -7,6 +7,7 @@ import { Service } from "./pages/services/Services";
 import { Portfolio } from "./pages/portfolio/Portfolio";
 import { Contact } from "./pages/contact/Contact";
 import { About } from "./pages/about/About";
+import { Career } from "./pages/career/Career";
 
 export const App = () => {
   return (
@@ -15,7 +16,8 @@ export const App = () => {
         <Route path="/" Component={Home} />
         <Route path="/about" Component={About} />
         <Route path="/services" Component={Service} />
-        {/* <Route path="/portfolio" Component={Portfolio}/> */}
+        <Route path="/career" Component={Career} />
+        <Route path="/portfolio" Component={Portfolio} />
         <Route path="/contact" Component={Contact} />
       </Routes>
     </>

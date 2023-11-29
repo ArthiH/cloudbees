@@ -1,37 +1,44 @@
+import { MdEmail } from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
+
 export const Footer = () => {
   return (
-    <main className="bg-primary p-14 mt-10 flex justify-center items-center">
+    <main className=" bg-secondary bg-custom-background bg-no-repeat bg-cover bg-center py-10 mt-10 flex justify-center items-center">
       <section className="max-w-screen-xl w-[95%]">
-        <h1 className="text-white text-4xl max-sm:text-3xl mb-5 font-semibold">
-          CLOUDBEES TECH
+        <h1 className="text-secondary text-6xl max-[600px]:text-[40px] mb-5 font-semibold font-[Gabriela]">
+          CloudBees Tech
         </h1>
-        <div className="w-full h-1 bg-mediumgrey mt-2"></div>
-
+        <div className="w-full h-1 bg-secondary mt-2"></div>
         {/* Address details */}
-
-        <section className="text-white font-bold flex flex-wrap justify-between items-center gap-3 mt-8">
+        <section className="text-white px-10  max-[620px]:text-center font-medium grid grid-cols-3 max-[750px]:grid-cols-2 max-[620px]:grid-cols-1 gap-10  mt-8">
           <div>
-            <h4 className="mb-2">Contact</h4>
-            <p className="mb-2">
-              <span>Email ID:</span> hrsupport@b2vtech.com
-            </p>
-            <p>
-              <span>India Contact:</span> +91 -7358760777
-            </p>
-            <p>
-              <span>US Contact:</span> +1 (614) 632-9349
-            </p>
+            <h4 className="mb-2 text-black font-bold">CONTACT</h4>
+            <article className="flex gap-2 items-center max-[620px]:justify-center">
+              <span className="">
+                <MdEmail className="text-secondary text-xl" />
+              </span>
+              <p className="">hrsupport@b2vtech.com</p>
+            </article>
+            <article className="flex gap-2 mt-3 max-[620px]:justify-center">
+              <p>
+                <FaPhone className="text-secondary text-lg" />
+              </p>
+              <article className="flex flex-col gap-1">
+                <span>(India) +91 -7358760777</span>
+                <span>(USA) +1 (614) 632-9349</span>
+              </article>
+            </article>
           </div>
           <div>
-            <h4 className="mb-2">Pondicherry</h4>
-            <p>No 1, 3rd main road,</p>
+            <h4 className="mb-2 text-black font-bold">PONDICHERRY</h4>
+            <p>#1,III main road,</p>
             <p>Chellapappu nagar,</p>
             <p>Reddiyarpalayam,</p>
-            <p>Pondicherry 605010</p>
+            <p>Pondicherry - 605010</p>
           </div>
           <div>
-            <h4 className="mb-2">USA</h4>
-            <p>8999, Ellrod way,</p>
+            <h4 className="mb-2 text-black font-bold">USA</h4>
+            <p>#8999, Ellrod way,</p>
             <p>Lewis center,</p>
             <p>Ohio - 43035</p>
           </div>

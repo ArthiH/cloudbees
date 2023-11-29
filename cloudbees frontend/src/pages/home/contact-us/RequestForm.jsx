@@ -44,7 +44,7 @@ export const RequestQuotes = (props) => {
     try {
       axios({
         method: "post",
-        url: "localhost:5000/requestdata/post",
+        url: "http://localhost:5000/requestdata/post",
         data: data,
       });
     } catch (error) {
@@ -211,7 +211,10 @@ export const InputForm = () => {
     <>
       {inputDetails.map((items, i) => {
         return (
-          <main className="border-mediumyellow border p-5 w-full rounded-xl" key={i}>
+          <main
+            className="border-mediumyellow border p-5 w-full rounded-xl"
+            key={i}
+          >
             <h1 className="text-lg mb-8 text-mediumgrey">
               {items.label} <sup className="text-xl top-[0] text-star">*</sup>
             </h1>
@@ -376,7 +379,7 @@ export const Languages = () => {
   );
 };
 
-export const BackendList = () => {  
+export const BackendList = () => {
   const { register } = useFormContext();
   const backendtype = ["Micro Services", "AWS", "Firebase", "Mango DB", "SQL"];
 

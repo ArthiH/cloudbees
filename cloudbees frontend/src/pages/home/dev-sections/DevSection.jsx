@@ -4,64 +4,69 @@ import { BiBrain } from "react-icons/bi";
 
 export const DevSection = () => {
   return (
-    <>
-      <main className="relative flex items-center justify-center py-2 mb-8">
+    <main>
+      <h4 className="text-primary text-4xl font-semibold text-center mt-20 mb-3">
+        SERVICES
+      </h4>
+      <h1 className="sm:text-4xl text-3xl mx-3 text-center font-medium mt-5 mb-16">
+        Provide Awesome Services To You
+      </h1>
+      <section className="relative flex items-center justify-center py-2 mb-8">
         <div className="bg-primary text-third w-full h-20 absolute -z-10"></div>
         {/* Development Section Card */}
         <div className="max-w-screen-xl w-[95%]">
           <DevCard />
         </div>
-      </main>
-    </>
+      </section>
+    </main>
   );
 };
 
 export const DevCard = () => {
   return (
-    <main className="flex justify-center items-center flex-wrap w-full gap-6 max-sm:px-10 py-5 z-20">
-      {/* Card1 */}
-      <div className="flex items-center bg-mediumgrey sm:max-w-sm sm:gap-4 gap-2 py-9 px-5 mx-3 rounded shadow-2xl">
-        <HiMiniComputerDesktop className="text-primary text-[12rem]" />
-        <article className="max-sm:mx-3">
-          <h3 className="text-mediumyellow font-semibold mb-3">
-            Web & SAAS Development
-          </h3>
-          <p className="text-white ">
-            Its a recurring revenue model and provides faster deployment time
-            than on-premises software
-          </p>
-        </article>
-      </div>
+    <main className="grid grid-cols-4 max-[1100px]:grid-cols-2 max-[640px]:grid-cols-1 w-full gap-6 max-sm:px-10 py-5 z-20">
+      {DevCardDetails.map((value, index) => {
+        return (
+          <div
+            key={index}
+            className="flex flex-col items-center text-center rounded-xl w-full sm:gap-4 gap-2 sm:px-4 p-2 mx-3 bg-secondary"
+          >
+            <article className="text-primary text-[5rem]">
+              {value.icons}
+            </article>
 
-      {/* Card2 */}
-      <div className="flex items-center sm:max-w-sm sm:gap-4 gap-2 sm:px-4 p-2 mx-3 rounded shadow-2xl bg-mediumgrey">
-        <CiMobile3 className="text-primary text-[15rem]" />
-        <article>
-          <h3 className="text-mediumyellow font-semibold mb-3">
-            Mobile Development
-          </h3>
-          <p className="text-white">
-            Its the trend of the future as mobile devices become more and more
-            powerful, and the browser takes an even more dominant role as the
-            operating system of the future.
-          </p>
-        </article>
-      </div>
-
-      {/* Card3 */}
-      <div className="flex items-center sm:max-w-sm sm:gap-4 gap-2 sm:px-4 p-2 mx-3 rounded shadow-2xl bg-mediumgrey">
-        <BiBrain className="text-primary text-[15rem]" />
-        <article>
-          <h3 className="text-mediumyellow font-semibold mb-3">
-            Research & Development
-          </h3>
-          <p className="text-white">
-            R&D is separate from most operational activities performed by a
-            corporation. This is typically not performed with the expectation of
-            immediate profit.
-          </p>
-        </article>
-      </div>
+            <article>
+              <h3 className="text-mediumyellow font-semibold mb-3">
+                {value.title}
+              </h3>
+              <p className="text-white mb-2">{value.p}</p>
+            </article>
+          </div>
+        );
+      })}
     </main>
   );
 };
+
+export const DevCardDetails = [
+  {
+    icons: <HiMiniComputerDesktop />,
+    title: "Web & SAAS Development",
+    p: "Its a recurring revenue model and provides faster deployment time than on-premises software",
+  },
+  {
+    icons: <CiMobile3 />,
+    title: "Mobile Development",
+    p: "Its the trend of the future as mobile devices become more and more powerful, and the browser takes an even more dominant role as the operating system of the future.",
+  },
+  {
+    icons: <BiBrain />,
+    title: "Research & Development",
+    p: "R&D is separate from most operational activities performed by a corporation. This is typically not performed with the expectation of immediate profit.",
+  },
+  {
+    icons: <HiMiniComputerDesktop />,
+    title: "Digital Marketing",
+    p: "Digital marketing the bridge between ideas and engagement.Elevate your brand in the digital space, where impressions become connections.",
+  },
+];
