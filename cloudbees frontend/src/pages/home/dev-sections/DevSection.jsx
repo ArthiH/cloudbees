@@ -5,12 +5,12 @@ import { BiBrain } from "react-icons/bi";
 export const DevSection = () => {
   return (
     <main>
-      <h4 className="text-primary text-4xl font-semibold text-center mt-20 mb-3">
+      {/* <h4 className="text-primary text-4xl font-semibold text-center mt-20 mb-3">
         SERVICES
       </h4>
       <h1 className="sm:text-4xl text-3xl mx-3 text-center font-medium mt-5 mb-16">
         Provide Awesome Services To You
-      </h1>
+      </h1> */}
       <section className="relative flex items-center justify-center py-2 mb-8">
         <div className="bg-primary text-third w-full h-20 absolute -z-10"></div>
         {/* Development Section Card */}
@@ -51,6 +51,11 @@ export const DevCard = () => {
 export const DevCardDetails = [
   {
     icons: <HiMiniComputerDesktop />,
+    title: "Digital Marketing",
+    p: "Digital marketing the bridge between ideas and engagement.Elevate your brand in the digital space, where impressions become connections.",
+  },
+  {
+    icons: <HiMiniComputerDesktop />,
     title: "Web & SAAS Development",
     p: "Its a recurring revenue model and provides faster deployment time than on-premises software",
   },
@@ -63,10 +68,5 @@ export const DevCardDetails = [
     icons: <BiBrain />,
     title: "Research & Development",
     p: "R&D is separate from most operational activities performed by a corporation. This is typically not performed with the expectation of immediate profit.",
-  },
-  {
-    icons: <HiMiniComputerDesktop />,
-    title: "Digital Marketing",
-    p: "Digital marketing the bridge between ideas and engagement.Elevate your brand in the digital space, where impressions become connections.",
   },
 ];

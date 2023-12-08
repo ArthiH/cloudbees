@@ -2,13 +2,14 @@
 import { AiOutlineMenu, AiFillCloseCircle } from "react-icons/ai";
 
 // logo image
-import logo from "../../assest/logo/CBT_logo.png";
+import logo from "../../assest/logo/CBT_logo_Dec_23.png";
 
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   const [sidebar, setSideBar] = useState(false);
+
   function aside() {
     return setSideBar(!sidebar);
   }
@@ -16,7 +17,7 @@ export const Navbar = () => {
     alert(
       "Thank you for choosing us for your carrier growth, you will redirected to our academy website"
     );
-    window.location.href = "https://oceanacademy.co.in/";
+    window.open("https://oceanacademy.co.in/", "_blank");
   };
 
   return (
@@ -25,11 +26,11 @@ export const Navbar = () => {
       {sidebar && <Sidebar onclose={aside} alertmsg={CoursesAlert} />}
 
       {/* started navbar */}
-      <nav className="sticky top-0 w-full bg-secondary py-2 z-40">
+      <nav className="sticky top-0 w-full bg-darkgrey py-2 z-40">
         <section className="max-w-screen-xl mx-auto flex justify-between items-center py-2 w-[95%]">
-          <div>
+          <div className="px-3">
             <img
-              className="max-w-[90px]"
+              className="max-w-[150px] w-full"
               src={logo}
               alt="not found"
               width="100%"

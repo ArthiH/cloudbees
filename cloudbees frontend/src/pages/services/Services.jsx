@@ -13,14 +13,15 @@ import ecommerce from "../../assest/services/commerce/animation_lmvt1imx.json";
 import mobile from "../../assest/services/mobile/animation_lmvqockp.json";
 import cloud from "../../assest/services/cloud/animation_lmvp5at5.json";
 import consulting from "../../assest/services/consulting/animation_lmvt9klx.json";
+import cc from "../../assest/services/cloud computing/Animation - 1701865451895.json";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 export const Service = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+  // const { pathname } = useLocation();
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, [pathname]);
 
   return (
     <>
@@ -65,20 +66,19 @@ export const Service = () => {
 
           {/* our service start */}
           <section className=" mt-10 ">
-            <h3 className="uppercase max-sm:text-3xl text-primary text-4xl py-10 font-semibold text-center">
+            <h3 className="uppercase max-sm:text-3xl text-primary text-4xl py-10 font-semibold text-center ">
               Our Best Services
             </h3>
-            <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 lg:p-4 py-3 rounded my-5 mb-14">
+            <div className="grid grid-cols-3 gap-10 justify-items-center mx-3 max-[760px]:grid-cols-1 max-[1150px]:grid-cols-2 lg:p-4 py-3 rounded my-5 mb-14">
               {ServicesCardContent.map((items, index) => {
                 return (
                   <div
-                    className=" bg-mediumgrey rounded-xl shadow-xl sm:last:col-span-2 lg:last:col-span-1"
+                    className=" bg-secondary rounded-xl shadow-xl min-w-[200px] w-[350px] max-sm:w-[290px]"
                     key={index}
                   >
-                    <span className="flex items-start max-md:w-[50%] mx-auto">
-                      {" "}
-                      {items.icons}
-                    </span>
+                    <div className=" h-[300px] w-full flex justify-center items-center">
+                      <span className="object-cover"> {items.icons}</span>
+                    </div>
                     <h1 className="font-medium text-xl text-primary text-center my-3 px-1">
                       {items.h1}
                     </h1>
@@ -105,7 +105,7 @@ export const ServicesCardContent = [
       <Lottie
         animationData={web}
         loop={true}
-        className="lg:max-w-[200px] mx-auto"
+        className="max-w-[250px] mx-auto"
       />
     ),
     h1: "Web Design & Development",
@@ -116,19 +116,31 @@ export const ServicesCardContent = [
       <Lottie
         animationData={ecommerce}
         loop={true}
-        className="mb-3 max-lg:mb-10"
+        className="max-w-[300px] mx-auto"
       />
     ),
     h1: "E-Commerce Development",
     p: "Enabling businesses to reach a wider customer base with our ecommerce website development services.",
   },
   {
-    icons: <Lottie animationData={mobile} loop={true} />,
+    icons: (
+      <Lottie
+        animationData={mobile}
+        loop={true}
+        className="max-w-[300px] mx-auto"
+      />
+    ),
     h1: "Mobile Application Development",
     p: "Our experience ranges from membership dashboards development to custom eCommerce integration and business process applications.",
   },
   {
-    icons: <Lottie animationData={cloud} loop={true} />,
+    icons: (
+      <Lottie
+        animationData={cloud}
+        loop={true}
+        className="max-w-[300px] mx-auto"
+      />
+    ),
     h1: "Cloud Managed Solution",
     p: "We maintain oversight and administrative control of cloud computing products and services, whether deployed in public, private, or hybrid cloud environments.",
   },
@@ -137,10 +149,21 @@ export const ServicesCardContent = [
       <Lottie
         animationData={consulting}
         loop={true}
-        className="lg:max-w-[210px]  mx-auto"
+        className="max-w-[250px] mx-auto"
       />
     ),
     h1: "IT Consulting",
     p: "We can help you develop and execute a clear and strategic IT roadmap with priorities that are closely linked to business goals.",
+  },
+  {
+    icons: (
+      <Lottie
+        animationData={cc}
+        loop={true}
+        className="max-w-[250px] mx-auto"
+      />
+    ),
+    h1: "Cloud Computing",
+    p: "Cloud computing is a technology that enables access to and delivery of computing resources, such as servers, storage, and software, over the internet.",
   },
 ];

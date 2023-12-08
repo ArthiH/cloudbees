@@ -13,9 +13,9 @@
       "sizes": "180x192"
     },
     {
-      "src": "cbtlogo.png",
+      "src": "CBT logo.png",
       "type": "image/png",
-      "sizes": "180x192"
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",

@@ -10,15 +10,16 @@ import IND_T5 from "../../assest/about/IND_T5.jpg";
 import T7 from "../../assest/about/t5.avif";
 import IND_T1 from "../../assest/about/IND_T1.jpeg";
 import T8 from "../../assest/about/IND_T8.jpg";
+import T9 from "../../assest/about/IND_T9.jpeg";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 export const About = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+  // const { pathname } = useLocation();
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, [pathname]);
   return (
     <>
       <Navbar />
@@ -112,7 +113,7 @@ export const UsaTeam = () => {
         </h1>
       </div>
       <section className="max-w-screen-xl w-[95%] mx-auto">
-        <div className="flex justify-around my-20 flex-wrap gap-10 mx-20">
+        <div className="grid grid-cols-2 justify-items-center max-[730px]:grid-cols-1 gap-14 my-20">
           {Team.slice(0, 2).map((value, index) => {
             return (
               <section
@@ -135,6 +136,10 @@ export const UsaTeam = () => {
                     {value.h2}
                   </h2>
                   <p className="text-sm text-litegrey my-4 h-12 px-5">
+                    {" "}
+                    <span className="text-secondary font-semibold font-serif">
+                      Skills : &nbsp;
+                    </span>
                     {value.p}
                   </p>
                   <div className="flex gap-10 justify-center mb-5 bg-gradient-to-r from-primary to-mediumgrey items-end text-xl text-white py-2">
@@ -166,14 +171,14 @@ export const IndiaTeam = () => {
         </h1>
       </div>
       <section className="max-w-screen-xl w-[95%] mx-auto">
-        <div className="my-20 grid grid-cols-3 gap-14 justify-items-center max-[800px]:grid-cols-1 max-[1150px]:grid-cols-2 p-10">
-          {Team.slice(2).map((value, index) => {
+        <div className="mt-20 grid grid-cols-4 gap-14 justify-items-center max-[730px]:grid-cols-1 max-[1190px]:grid-cols-2 p-10">
+          {Team.slice(2, 6).map((value, index) => {
             return (
               <section
                 key={index}
                 className="border-2 border-primary bg-white min-w-[300px] w-[300px] rounded-tr-[50px] rounded-tl-[50px]"
               >
-                <div className="h-28 rounded-tr-[50px]  rounded-tl-[50px] bg-gradient-to-r from-mediumgrey  to-mediumyellow relative">
+                <div className="h-28 rounded-tr-[50px]  rounded-tl-[50px] bg-gradient-to-r from-mediumgrey  to-primary relative">
                   <div className="absolute -bottom-10 left-2/4 -translate-x-1/2 border-4 border-primary max-w-[120px]  rounded-full">
                     <img
                       className="object-fit w-full rounded-full"
@@ -188,7 +193,54 @@ export const IndiaTeam = () => {
                   <h2 className="text-lg text-mediumgrey font-semibold py-2">
                     {value.h2}
                   </h2>
-                  <p className="text-sm text-litegrey mb-5 px-3 h-16 flex items-center justify-center">
+                  <p className="text-sm text-litegrey mb-5 px-3 h-16 ">
+                    <span className="text-secondary font-semibold font-serif">
+                      Skills : &nbsp;
+                    </span>
+                    {value.p}
+                  </p>
+                  <div className="flex gap-10 justify-center mb-5 bg-gradient-to-r from-primary to-mediumgrey items-end text-xl text-white py-2">
+                    <span>
+                      <FaFacebookF />
+                    </span>
+                    <span>
+                      <FaTwitter />
+                    </span>
+                    <span>
+                      <FaInstagram />
+                    </span>
+                  </div>
+                </article>
+              </section>
+            );
+          })}
+        </div>
+        <div className="mb-20 grid grid-cols-3 gap-4 max-[1190px]:gap-14 justify-items-center max-[730px]:grid-cols-1  max-[1190px]:grid-cols-2 p-10">
+          {Team.slice(6).map((value, index) => {
+            return (
+              <section
+                key={index}
+                className="border-2 border-primary bg-white min-w-[300px] w-[350px] max-[1190px]:w-[300px] rounded-tr-[50px] rounded-tl-[50px]"
+              >
+                <div className="h-28 rounded-tr-[50px]  rounded-tl-[50px] bg-gradient-to-r from-mediumgrey  to-primary relative">
+                  <div className="absolute -bottom-10 left-2/4 -translate-x-1/2 border-4 border-primary max-w-[120px]  rounded-full">
+                    <img
+                      className="object-fit w-full rounded-full"
+                      src={value.img}
+                      alt="not found"
+                    />
+                  </div>
+                </div>
+
+                <article className="text-center mt-16">
+                  <h1 className="text-xl text-primary font-bold">{value.h1}</h1>
+                  <h2 className="text-lg text-mediumgrey font-semibold py-2">
+                    {value.h2}
+                  </h2>
+                  <p className="text-sm text-litegrey mb-5 px-3 h-16 ">
+                    <span className="text-secondary font-semibold font-serif">
+                      Skills : &nbsp;
+                    </span>
                     {value.p}
                   </p>
                   <div className="flex gap-10 justify-center mb-5 bg-gradient-to-r from-primary to-mediumgrey items-end text-xl text-white py-2">
@@ -223,7 +275,7 @@ export const Team = [
     img: T2,
     h1: "LEEMAVIDHYA",
     h2: "Delivery/QA Head",
-    p: "Web,Mobile,Automation",
+    p: "Automation - Web/Mobile",
   },
   {
     img: IND_T1,
@@ -241,7 +293,7 @@ export const Team = [
     img: IND_T3,
     h1: "MOHAMED IJASS",
     h2: "UI/UX Lead",
-    p: "Adobe XD,Figma,Web design,Interaction design ",
+    p: "Adobe XD,Figma,Web design,Flutter,Interaction design ",
   },
   {
     img: IND_T4,
@@ -260,5 +312,11 @@ export const Team = [
     h1: "VEDAMBIGAI",
     h2: "Digital Marketing",
     p: "Analytics,Social media marketing",
+  },
+  {
+    img: T9,
+    h1: "SHERINE",
+    h2: "Business Dev",
+    p: "Marketing skills,Business intelligence skills",
   },
 ];

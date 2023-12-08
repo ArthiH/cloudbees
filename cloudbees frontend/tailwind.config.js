@@ -5,6 +5,7 @@ module.exports = {
     colors: {
       primary: "#ffc700",
       secondary: "#333333",
+      darkgrey: "#18191A",
       white: "white",
       mediumyellow: "#ffdb5d",
       liteyellow: "#fff0b9",
@@ -18,13 +19,17 @@ module.exports = {
     extend: {
       backgroundImage: (theme) => ({
         "custom-background":
-          "url('D:/ARTHI/cloudbees/cloudbees frontend/src/assest/footer/footer_bg.jpg')",
+          "url('C:/arthi/cloudbees/cloudbees frontend/src/assest/footer/footer_bg.jpg')",
         portfolio:
-          "url('D:/ARTHI/cloudbees/cloudbees frontend/src/assest/portfolio/portfolio_1.jpg')",
+          "url('C:/arthi/cloudbees/cloudbees frontend/src/assest/portfolio/portfolio.jpg')",
         payment:
-          "url('D:/ARTHI/cloudbees/cloudbees frontend/src/assest/portfolio/payment_3.jpg')",
+          "url('C:/arthi/cloudbees/cloudbees frontend/src/assest/portfolio/payment.jpg')",
         estate:
-          "url('D:/ARTHI/cloudbees/cloudbees frontend/src/assest/portfolio/estate.jpg')",
+          "url('C:/arthi/cloudbees/cloudbees frontend/src/assest/portfolio/estate.jpg')",
+        finance:
+          "url('C:/arthi/cloudbees/cloudbees frontend/src/assest/portfolio/finance.jpg')",
+        manufacturing:
+          "url('C:/arthi/cloudbees/cloudbees frontend/src/assest/portfolio/manufacturing.jpg')",
       }),
     },
   },
