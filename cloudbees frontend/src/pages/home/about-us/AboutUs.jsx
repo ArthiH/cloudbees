@@ -1,5 +1,6 @@
 // images
 import colleagues from "../../../assest/aboutus/aboutus.jpg";
+import count from "../../../assest/aboutus/count_bg.webp";
 // React icons
 import { HiMiniUserGroup } from "react-icons/hi2";
 import { FaRocket, FaAward } from "react-icons/fa";
@@ -62,8 +63,8 @@ export const AboutUs = () => {
 
 export const AboutUsChild = () => {
   return (
-    <main className="h-48 max-md:h-auto flex justify-center items-center bg-[url('https://media.istockphoto.com/id/1424873695/photo/office-interior-with-coworking-zone-and-pc-computers-panoramic-window.webp?b=1&s=612x612&w=0&k=20&c=W_-FHa_20CzzyuO2JXAeHH73LWI_J-uen8FOIDMEdo0=')]">
-      <div className="max-w-screen-xl w-[95%] flex flex-wrap gap-3 p-4 max-sm:justify-center justify-between items-center">
+    <main className="h-48 max-[900px]:h-full flex justify-center items-center" style={{backgroundImage:`url(${count})`}}>
+      <div className="max-w-screen-xl w-[95%] flex flex-wrap gap-4 p-4 max-sm:justify-center justify-between items-center">
         <section className="flex flex-col items-center px-9 py-2 rounded shadow-lg bg-primary">
           <span className="text-4xl text-black mb-2">
             <RiShakeHandsFill />

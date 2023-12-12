@@ -1,8 +1,9 @@
 //connecting for server and client side
 import axios from "axios";
+import emailjs from '@emailjs/browser';
 
 // form validation
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm, FormProvider, useFormContext } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ErrorMessage } from "@hookform/error-message";
@@ -17,14 +18,17 @@ export const RequestQuotes = (props) => {
   const onMouseLeave = () => setIsHovered(true);
   //validation methods
   const methods = useForm({ resolver: yupResolver(RequestSchema) });
-  const { register, errors, handleSubmit, reset } = methods; // Destructure the necessary methods
+  const { register, errors, handleSubmit, reset} = methods; // Destructure the necessary methods
+  const form = useRef();
 
   // closing clear from
   const [showclearform, setShowClearForm] = useState(false);
+  
   //onsubmit button
-  const OnSubmit = handleSubmit((data) => {
-    const storeRequestData = data;
-    createRequestForm(storeRequestData);
+  const OnSubmit = handleSubmit(() => {
+    try {
+       emailjs.sendForm( process.env.REACT_APP_YOUR_SERVICE_ID,  process.env.REACT_APP_YOUR_TEMPLATE_ID, form.current,process.env.REACT_APP_YOUR_PUBLIC_KEY)
+  console.log("SUCCESS !");  
     reset({
       customername: "",
       phone: "",
@@ -36,24 +40,32 @@ export const RequestQuotes = (props) => {
       backend: "",
       payment: "",
     });
+    }
+    catch (error) {
+      console.log(error);
+    }
   });
 
   // server connection section
 
-  function createRequestForm(data) {
-    try {
-      axios({
-        method: "post",
-        url: "http://localhost:5000/requestdata/post",
-        data: data,
-      });
-    } catch (error) {
-      console.log(("error", error));
-    }
-  }
+  // function createRequestForm(data) {
+  //   try {
+  //     axios({
+  //       method: "post",
+  //       url: "http://localhost:5000/requestdata/post",
+  //       data: data,
+  //     });
+  //   } catch (error) {
+  //     console.log(("error", error));
+  //   }
+  // }
+
+
+
   return (
+
     <FormProvider {...methods}>
-      <main className="fixed w-full min-h-screen top-0 z-50 left-0 bg-black bg-opacity-40 ">
+      <form className="fixed w-full min-h-screen top-0 z-50 left-0 bg-black bg-opacity-40 " ref={form} >
         <div className="max-w-[750px] w-[95%] absolute grid top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  bg-white pb-10 px-16 rounded-xl h-[90%] overflow-auto scrollbar-hide">
           <section className="sticky top-0 w-full bg-white z-40 flex justify-between items-center">
             <h1 className="text-3xl font-semibold text-primary mb-3">
@@ -153,7 +165,7 @@ export const RequestQuotes = (props) => {
             <div className="flex justify-between items-center">
               <button
                 className="text-white bg-secondary px-3 py-[7px] rounded-md hover:scale-x-110 hover:ring-1 hover:ring-primary"
-                type="submit"
+                type="submit" 
                 onClick={OnSubmit}
               >
                 Submit
@@ -177,10 +189,12 @@ export const RequestQuotes = (props) => {
             }}
           />
         )}
-      </main>
+      </form>
     </FormProvider>
   );
 };
+
+
 
 export const InputForm = () => {
   // destructuring methods
@@ -213,7 +227,7 @@ export const InputForm = () => {
         return (
           <main
             className="border-mediumyellow border p-5 w-full rounded-xl"
-            key={i}
+            key={i} 
           >
             <h1 className="text-lg mb-8 text-mediumgrey">
               {items.label} <sup className="text-xl top-[0] text-star">*</sup>

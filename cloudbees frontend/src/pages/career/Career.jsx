@@ -187,18 +187,6 @@ export const Application = () => {
     handleSubmit,
   } = useForm({ resolver: yupResolver(ApplicationSchema) });
 
-  // const createApplicationForm = (data) => {
-  //   try {
-  //     axios({
-  //       method: "post",
-  //       url: "http://localhost:5000/formdata/add",
-  //       data: data,
-  //     });
-  //   } catch (error) {
-  //     console.log(("error", error));
-  //   }
-  // };
-
   const createApplicationForm = async (data) => {
     try {
       const formData = new FormData();

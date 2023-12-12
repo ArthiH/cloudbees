@@ -2,25 +2,29 @@ import { Navbar } from "../navbar/Navbar";
 import { Footer } from "../footer/Footer";
 
 import portfolio from "../../assest/portfolio/portfolio.jpg";
+import payment from "../../assest/portfolio/payment.jpg";
 import hotel from "../../assest/portfolio/hotel.jpg";
 import tourism from "../../assest/portfolio/tourism.jpg";
+import estate from "../../assest/portfolio/estate.jpg";
+import finance from "../../assest/portfolio/finance.jpg";
 import education from "../../assest/portfolio/education.jpg";
 import sports from "../../assest/portfolio/sports.jpg";
+import insurance from "../../assest/portfolio/insurance.jpg";
 import sector from "../../assest/portfolio/public-sector.jpg";
 import retail from "../../assest/portfolio/retail.jpg";
+import healthcare from "../../assest/portfolio/healthcare.jpg";
 import hospitality from "../../assest/portfolio/hospitality.jpg";
-import insurance from "../../assest/portfolio/insurance.jpg";
-import health from "../../assest/portfolio/healthcare.jpg";
 import fleet from "../../assest/portfolio/fleet.jpg";
+import manufacturing from "../../assest/portfolio/manufacturing.jpg";
 
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 export const Portfolio = () => {
-  // const { pathname } = useLocation();
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [pathname]);
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       {/* resuable navbar */}
@@ -61,14 +65,14 @@ export const Portfolio = () => {
 };
 
 export const Payment = () => {
-  return (
-    <section className="w-[80%] h-[350px] max-[550px]:w-full max-[550px]:h-[450px] bg-no-repeat bg-payment  bg-cover -z-20 relative my-16">
+  return (  
+    <section className="w-[80%] h-[350px] max-[550px]:w-full max-[550px]:h-[450px] bg-no-repeat bg-cover relative my-16 -z-20" style={{ backgroundImage: `url(${payment })`}}> 
       <div className="w-full h-[350px] max-[550px]:h-[450px] absolute bg-liteblack top-0 -z-10"></div>
       <div>
         <h1 className="text-2xl font-bold text-white bg-primary flex justify-end py-2 px-3">
           Payment Integration
         </h1>
-        <p className="my-7 text-white font-semibold mx-20 w-[80%] float-right max-[750px]:mt-10 mt-20 max-[580px]:w-[80%] max-[580px]:text-center max-[550px]:mx-10">
+        <p className="my-7 text-white font-semibold mx-20 w-[80%] float-right mt-20 max-[580px]:w-[80%] max-[580px]:text-center max-[550px]:mx-10 max-[300px]:mt-5">
           Implement seamless payment integration into your website, enabling
           secure transactions through various payment gateways. Enhance user
           experience and trust by providing a convenient and reliable way for
@@ -109,13 +113,13 @@ export const Hotel = () => {
 
 export const RealEstate = () => {
   return (
-    <main className="bg-estate h-96 max-[550px]:h-full bg-cover bg-no-repeat flex justify-center items-center">
-      <div className="bg-liteblack w-[50%] max-[550px]:w-[90%] my-10 mx-5 rounded-xl p-8 text-white">
-        <h1 className="text-3xl font-bold text-center mb-5 ">RealEstate </h1>
+ <main className="h-96 max-h-full bg-cover bg-no-repeat flex justify-center items-center max-[600px]:h-full" style={{ backgroundImage: `url(${estate })`}}>
+      <div className="bg-liteblack w-1/2 max-w-[95%] max-[700px]:w-full my-10 mx-5 rounded-xl p-8 text-white">
+        <h1 className="text-3xl font-bold text-center mb-5">Real Estate</h1>
         <p className="font-semibold">
           <i>
             Transform real estate experiences with a visually appealing website
-            that seamlessly showcases property listings,offering prospective
+            that seamlessly showcases property listings, offering prospective
             buyers and renters an immersive view of available homes or
             commercial spaces.
           </i>
@@ -156,7 +160,7 @@ export const Tourism = () => {
 export const Education = () => {
   return (
     <section className="relative">
-      <div className="flex justify-end relative  h-[350px] max-[550px]:h-[500px] overflow-hidden">
+      <div className="flex justify-end relative h-[350px] max-[550px]:h-[500px] overflow-hidden">
         <img
           className="object-cover w-[80%] max-[550px]:w-full h-full"
           src={education}
@@ -207,13 +211,13 @@ export const Sports = () => {
 
 export const FinancialServices = () => {
   return (
-    <section className="w-[80%] h-[350px] max-[550px]:w-full max-[550px]:h-[450px] bg-no-repeat bg-finance  bg-cover -z-20 relative my-16">
-      <div className="w-full h-[350px] max-[550px]:h-[450px] absolute bg-black opacity-50 top-0 -z-10"></div>
+    <section className="w-[80%] h-[350px] max-[550px]:w-full max-[550px]:h-[450px] bg-no-repeat bg-cover -z-20 relative my-16" style={{ backgroundImage: `url(${finance})`}}>
+      <div className="w-full h-[350px] max-[550px]:h-[450px] absolute bg-black opacity-70 top-0 -z-10"></div>
       <div>
         <h1 className="text-2xl font-bold text-white bg-primary flex justify-end py-2 px-3">
           Financial Services
         </h1>
-        <p className="my-10 text-white font-semibold mx-20 w-[80%] float-right max-[750px]:mt-10 mt-20 max-[580px]:w-[80%] max-[580px]:text-center max-[550px]:mx-10">
+        <p className="my-10 text-white font-semibold w-[80%] mx-20 float-right max-[300px]:mt-10 mt-20 max-[600px]:mx-10">
           As a trusted financial partner, we deliver tailored services,
           including wealth management, lending, and risk mitigation, empowering
           clients to navigate their financial journey with confidence and
@@ -251,11 +255,11 @@ export const PublicSector = () => {
     </main>
   );
 };
+
 export const Insurance = () => {
   return (
-    <main className="bg-finance h-96 max-[550px]:h-full bg-cover bg-no-repeat flex justify-center -z-30 items-center">
-      <div className="w-[50%] max-[550px]:w-[90%] my-10 mx-5 rounded-xl p-8 text-white relative">
-        <div className=" h-[200px] w-full rounded-xl absolute bg-[#ff0000] top-0 left-0 -z-[-1]"></div>
+    <main className="h-96 max-h-full bg-cover bg-no-repeat flex justify-center items-center max-[600px]:h-full" style={{ backgroundImage: `url(${insurance})`}}>
+      <div className="bg-ashgrey w-1/2 max-w-[95%] max-[900px]:w-full my-10 mx-5 rounded-xl p-8 text-mediumgrey">
         <h1 className="text-3xl font-bold text-center mb-5 text-primary z-[9999]">
           Insurance{" "}
         </h1>
@@ -271,31 +275,6 @@ export const Insurance = () => {
     </main>
   );
 };
-
-// export const Insurance = () => {
-//   return (
-//     <section className="relative">
-//       <div className="flex justify-end relative  h-[350px] max-[550px]:h-[500px] overflow-hidden">
-//         <img
-//           className="object-cover w-[80%] max-[550px]:w-full h-full"
-//           src={insurance}
-//           alt="not found"
-//         />
-//         <div className="w-[80%] h-[350px] max-[550px]:w-full max-[550px]:h-[500px] absolute bg-black opacity-70 top-0 right-0"></div>
-//       </div>
-//       <div>
-//         <h1 className="absolute top-0 w-[80%] max-[550px]:w-full right-0 text-2xl font-bold text-white bg-primary py-2 px-3">
-//           Insurance
-//         </h1>
-//         <p className="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 my-5 text-white font-semibold">
-//           As a leading insurer, we offer comprehensive coverage and risk
-//           management solutions, providing individuals and businesses with peace
-//           of mind and financial protection against unforeseen events.
-//         </p>
-//       </div>
-//     </section>
-//   );
-// };
 
 export const Retail = () => {
   return (
@@ -327,17 +306,24 @@ export const Retail = () => {
 
 export const Manufacturing = () => {
   return (
-    <section className="w-[80%] h-[350px] max-[550px]:w-full max-[550px]:h-[450px] bg-no-repeat bg-manufacturing bg-cover -z-20 relative my-16">
-      <div className="w-full h-[350px] max-[550px]:h-[450px] absolute bg-liteblack top-0 -z-10"></div>
+  <section className="relative">
+      <div className="flex justify-end relative  h-[350px] max-[550px]:h-[500px] overflow-hidden">
+        <img
+          className="object-cover w-[80%] max-[550px]:w-full h-full"
+          src={manufacturing}
+          alt="not found"
+        />
+        <div className="w-[80%] h-[350px] max-[550px]:w-full max-[550px]:h-[500px] absolute bg-liteblack top-0 right-0"></div>
+      </div>
       <div>
-        <h1 className="text-2xl font-bold text-white bg-primary flex justify-end py-2 px-3">
-          Manufacturing
+        <h1 className="absolute top-0 w-[80%] max-[550px]:w-full right-0 text-2xl font-bold text-white bg-primary py-2 px-3">
+           Manufacturing
         </h1>
-        <p className="my-7 text-white font-semibold mx-20 w-[80%] float-right max-[750px]:mt-10 mt-20 max-[580px]:w-[80%] max-[580px]:text-center max-[550px]:mx-10">
-          As a leading manufacturing enterprise, we specialize in precision
-          engineering and scalable production, delivering high-quality products
-          that meet industry standards while driving innovation and efficiency
-          in the manufacturing sector.
+        <p className="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 my-5 text-white font-semibold">
+         As a leading manufacturing enterprise, we specialize in precision
+        engineering and scalable production, delivering high-quality products
+        that meet industry standards while driving innovation and efficiency
+        in the manufacturing sector.
         </p>
       </div>
     </section>
@@ -374,20 +360,13 @@ export const Hospitality = () => {
 
 export const HealthCare = () => {
   return (
-    <section className="relative">
-      <div className="flex justify-end relative  h-[350px] max-[550px]:h-[500px] overflow-hidden">
-        <img
-          className="object-cover w-[80%] max-[550px]:w-full h-full"
-          src={health}
-          alt="not found"
-        />
-        <div className="w-[80%] h-[350px] max-[550px]:w-full max-[550px]:h-[500px] absolute bg-liteblack top-0 right-0"></div>
-      </div>
+  <section className="w-[80%] h-[350px] max-[550px]:w-full max-[550px]:h-[450px] bg-no-repeat bg-cover -z-20 relative my-16" style={{ backgroundImage: `url(${healthcare})`}}>
+      <div className="w-full h-[350px] max-[550px]:h-[450px] absolute bg-liteblack top-0 -z-10"></div>
       <div>
-        <h1 className="absolute top-0 w-[80%] max-[550px]:w-full right-0 text-2xl font-bold text-white bg-primary py-2 px-3">
+        <h1 className="text-2xl font-bold text-white bg-primary flex justify-end py-2 px-3">
           Health Care
         </h1>
-        <p className="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 my-5 text-white font-semibold">
+        <p className="my-7 text-white font-semibold mx-20 w-[80%] float-right mt-20 max-[600px]:mx-10">
           Dedicated to health and wellness, our healthcare services emphasize
           patient-centric care, leveraging cutting-edge technology and
           compassionate expertise to ensure optimal well-being and peace of

@@ -1,11 +1,12 @@
 import { MdEmail, MdLocationPin } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 
+
 export const Footer = () => {
   return (
-    <main className=" bg-secondary bg-custom-background bg-no-repeat bg-cover bg-center py-10 mt-10 flex justify-center items-center">
+    <main className="py-10 mt-10 flex justify-center items-center bg-my-footer w-full relative overflow-hidden">
       <section className="max-w-screen-xl w-[95%]">
-        <h1 className="text-secondary text-6xl max-[600px]:text-[40px] mb-5 font-semibold font-[Gabriela]">
+        <h1 className="text-secondary text-6xl max-[330px]:text-[25px] max-[600px]:text-[40px] mb-5 font-semibold font-[Gabriela]">
           CloudBees <span className="text-white">Tech</span>
         </h1>
         <div className="w-full h-1 bg-secondary mt-2"></div>

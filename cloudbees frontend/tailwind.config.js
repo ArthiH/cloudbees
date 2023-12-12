@@ -17,20 +17,10 @@ module.exports = {
       liteblack: "rgba(1, 1, 1, 0.66)",
     },
     extend: {
-      backgroundImage: (theme) => ({
-        "custom-background":
-          "url('C:/arthi/cloudbees/cloudbees frontend/src/assest/footer/footer_bg.jpg')",
-        portfolio:
-          "url('C:/arthi/cloudbees/cloudbees frontend/src/assest/portfolio/portfolio.jpg')",
-        payment:
-          "url('C:/arthi/cloudbees/cloudbees frontend/src/assest/portfolio/payment.jpg')",
-        estate:
-          "url('C:/arthi/cloudbees/cloudbees frontend/src/assest/portfolio/estate.jpg')",
-        finance:
-          "url('C:/arthi/cloudbees/cloudbees frontend/src/assest/portfolio/finance.jpg')",
-        manufacturing:
-          "url('C:/arthi/cloudbees/cloudbees frontend/src/assest/portfolio/manufacturing.jpg')",
-      }),
+      backgroundImage: {
+        "my-footer":
+          "linear-gradient(102deg, rgb(255,174,2) 25%, rgb(255,233,0) 100%)",
+      },
     },
   },
   variants: {

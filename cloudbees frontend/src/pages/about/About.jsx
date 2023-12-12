@@ -9,17 +9,17 @@ import IND_T4 from "../../assest/about/IND_T4.jpg";
 import IND_T5 from "../../assest/about/IND_T5.jpg";
 import T7 from "../../assest/about/t5.avif";
 import IND_T1 from "../../assest/about/IND_T1.jpeg";
-import T8 from "../../assest/about/IND_T8.jpg";
-import T9 from "../../assest/about/IND_T9.jpeg";
+import IND_T6 from "../../assest/about/IND_T8.jpg";
+import IND_T7 from "../../assest/about/IND_T9.jpeg";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 export const About = () => {
-  // const { pathname } = useLocation();
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [pathname]);
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <Navbar />
@@ -308,13 +308,13 @@ export const Team = [
     p: "Javascript,React,React Native,Flutter",
   },
   {
-    img: T8,
+    img: IND_T6,
     h1: "VEDAMBIGAI",
     h2: "Digital Marketing",
     p: "Analytics,Social media marketing",
   },
   {
-    img: T9,
+    img: IND_T7,
     h1: "SHERINE",
     h2: "Business Dev",
     p: "Marketing skills,Business intelligence skills",
