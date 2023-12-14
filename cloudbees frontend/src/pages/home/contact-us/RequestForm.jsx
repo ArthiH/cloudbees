@@ -23,7 +23,25 @@ export const RequestQuotes = (props) => {
 
   // closing clear from
   const [showclearform, setShowClearForm] = useState(false);
+  const [success, setSuccess] = useState(false);
   
+
+  const handleClearForm = () => {
+    return (
+          reset({
+      customername: "",
+      phone: "",
+      email: "",
+      choice: [],
+      feature: [],
+      backendlist: [],
+      language: [],
+      backend: "",
+      payment: "",
+    })
+        )
+    
+  }
   //onsubmit button
   const OnSubmit = handleSubmit(() => {
     try {
@@ -47,7 +65,7 @@ export const RequestQuotes = (props) => {
   });
 
   // server connection section
-
+  
   // function createRequestForm(data) {
   //   try {
   //     axios({
@@ -160,22 +178,28 @@ export const RequestQuotes = (props) => {
                 ))}
               </section>
             </div>
-
             {/* Buttons */}
             <div className="flex justify-between items-center">
               <button
                 className="text-white bg-secondary px-3 py-[7px] rounded-md hover:scale-x-110 hover:ring-1 hover:ring-primary"
                 type="submit" 
-                onClick={OnSubmit}
+                onClick={(e) => {
+                  e.preventDefault()
+                  OnSubmit()
+                  setSuccess(true)
+                }}
               >
                 Submit
               </button>
               <button
                 className="text-mediumgrey text-lg"
-                onClick={() => setShowClearForm(true)}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setShowClearForm(true)
+                }}
               >
                 Clear form
-              </button>
+              </button> 
             </div>
           </section>
         </div>
@@ -183,11 +207,15 @@ export const RequestQuotes = (props) => {
         {/* Adding clear page */}
         {showclearform && (
           <ClearForm
-            // clearform={handleClearForm}
+            clearform={handleClearForm}
             onclose={() => {
               setShowClearForm(false);
             }}
           />
+        )}
+        {/* Adding Successful page */}
+        {success && (
+          <SubmitSuccessful/>
         )}
       </form>
     </FormProvider>
@@ -448,6 +476,23 @@ export const ClearForm = (props) => {
             Clear form
           </button>
         </article>
+      </section>
+    </div>
+  );
+};
+export const SubmitSuccessful = () => {
+  return (
+    <div
+      className="fixed w-full min-h-screen top-0 left-0 flex flex-col justify-center items-center  bg-black bg-opacity-40"
+    >
+      <section className="bg-white p-4 pl-6 max-w-[450px] rounded-xl text-center">
+        <h1 className="text-5xl py-3 text-secondary"> Submitted Successfully !</h1>
+          <button
+            className="hover:scale-105 px-10 py-3 bg-secondary text-center rounded-lg text-white text-2xl font-semibold"
+            onClick={()=> window.location.href = "/"}
+          >
+            Ok
+          </button>
       </section>
     </div>
   );
