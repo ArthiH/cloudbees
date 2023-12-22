@@ -77,7 +77,7 @@ export const Job = (props) => {
   ];
   return (
     <main className="flex justify-center">
-      <section className="max-w-screen-xl w-full">
+      <section className="max-w-screen-2xl w-full">
         <h1 className="text-2xl text-mediumgrey font-semibold mx-5 ">Jobs</h1>
         <div className="flex justify-center items-center">
           {FullTimeJob.map((value, index) => {
@@ -135,7 +135,7 @@ export const Internship = (props) => {
 
   return (
     <main className="flex justify-center">
-      <section className="max-w-screen-xl w-full mt-5">
+      <section className="max-w-screen-2xl w-full mt-5">
         <h1 className="text-2xl text-mediumgrey font-semibold mx-5">
           Internship
         </h1>

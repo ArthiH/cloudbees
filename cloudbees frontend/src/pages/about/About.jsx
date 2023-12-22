@@ -4,13 +4,14 @@ import about from "../../assest/about/about_1.jpg";
 import mission from "../../assest/about/mission.jpg";
 import T1 from "../../assest/about/US_T1.jpg";
 import T2 from "../../assest/about/US_T2.jpg";
+import IND_T1 from "../../assest/about/IND_T1.jpeg";
+import IND_T2 from "../../assest/about/IND_T2.jpg";
 import IND_T3 from "../../assest/about/IND_T3.jpg";
 import IND_T4 from "../../assest/about/IND_T4.jpg";
 import IND_T5 from "../../assest/about/IND_T5.jpg";
-import T7 from "../../assest/about/t5.avif";
-import IND_T1 from "../../assest/about/IND_T1.jpeg";
-import IND_T6 from "../../assest/about/IND_T8.jpg";
-import IND_T7 from "../../assest/about/IND_T9.jpeg";
+import IND_T6 from "../../assest/about/IND_T6.jpg";
+import IND_T7 from "../../assest/about/IND_T7.jpg";
+import IND_T8 from "../../assest/about/IND_T8.jpeg";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
@@ -24,7 +25,7 @@ export const About = () => {
     <>
       <Navbar />
       <main className="flex justify-center">
-        <div className="max-w-screen-xl w-full">
+        <div className="max-w-screen-2xl w-full">
           <h1 className="text-center my-16 text-4xl text-primary font-bold">
             About Us
           </h1>
@@ -67,7 +68,7 @@ export const About = () => {
 export const Mission = () => {
   return (
     <main className="flex justify-center">
-      <div className="max-w-screen-xl w-full my-20 max-[1015px]:my-2">
+      <div className="max-w-screen-2xl w-full my-20 max-[1015px]:my-2">
         <h1 className="text-center my-20 text-4xl text-primary font-bold">
           Our Mission
         </h1>
@@ -112,7 +113,7 @@ export const UsaTeam = () => {
           USA Frontiers
         </h1>
       </div>
-      <section className="max-w-screen-xl w-[95%] mx-auto">
+      <section className="max-w-screen-2xl w-[95%] mx-auto">
         <div className="grid grid-cols-2 justify-items-center max-[730px]:grid-cols-1 gap-14 my-20">
           {Team.slice(0, 2).map((value, index) => {
             return (
@@ -170,9 +171,9 @@ export const IndiaTeam = () => {
           India Frontiers
         </h1>
       </div>
-      <section className="max-w-screen-xl w-[95%] mx-auto">
-        <div className="mt-20 grid grid-cols-4 gap-14 justify-items-center max-[730px]:grid-cols-1 max-[1190px]:grid-cols-2 p-10">
-          {Team.slice(2, 6).map((value, index) => {
+      <section className="max-w-screen-2xl w-[95%] mx-auto">
+        <div className="mt-20 grid grid-cols-4 gap-14 justify-items-center max-[730px]:grid-cols-1 max-[1350px]:grid-cols-2 p-10">
+          {Team.slice(2).map((value, index) => {
             return (
               <section
                 key={index}
@@ -193,7 +194,8 @@ export const IndiaTeam = () => {
                   <h2 className="text-lg text-mediumgrey font-semibold py-2">
                     {value.h2}
                   </h2>
-                  <p className="text-sm text-litegrey mb-5 px-3 h-16 ">
+                  {/* text-sm text-litegrey mb-5 px-3 h-16 */}
+                  <p className="text-sm text-litegrey mb-5 px-3 h-16">
                     <span className="text-secondary font-semibold font-serif">
                       Skills : &nbsp;
                     </span>
@@ -215,50 +217,7 @@ export const IndiaTeam = () => {
             );
           })}
         </div>
-        <div className="mb-20 grid grid-cols-3 gap-4 max-[1190px]:gap-14 justify-items-center max-[730px]:grid-cols-1  max-[1190px]:grid-cols-2 p-10">
-          {Team.slice(6).map((value, index) => {
-            return (
-              <section
-                key={index}
-                className="border-2 border-primary bg-white min-w-[300px] w-[350px] max-[1190px]:w-[300px] rounded-tr-[50px] rounded-tl-[50px]"
-              >
-                <div className="h-28 rounded-tr-[50px]  rounded-tl-[50px] bg-gradient-to-r from-mediumgrey  to-primary relative">
-                  <div className="absolute -bottom-10 left-2/4 -translate-x-1/2 border-4 border-primary max-w-[120px]  rounded-full">
-                    <img
-                      className="object-fit w-full rounded-full"
-                      src={value.img}
-                      alt="not found"
-                    />
-                  </div>
-                </div>
-
-                <article className="text-center mt-16">
-                  <h1 className="text-xl text-primary font-bold">{value.h1}</h1>
-                  <h2 className="text-lg text-mediumgrey font-semibold py-2">
-                    {value.h2}
-                  </h2>
-                  <p className="text-sm text-litegrey mb-5 px-3 h-16 ">
-                    <span className="text-secondary font-semibold font-serif">
-                      Skills : &nbsp;
-                    </span>
-                    {value.p}
-                  </p>
-                  <div className="flex gap-10 justify-center mb-5 bg-gradient-to-r from-primary to-mediumgrey items-end text-xl text-white py-2">
-                    <span>
-                      <FaFacebookF />
-                    </span>
-                    <span>
-                      <FaTwitter />
-                    </span>
-                    <span>
-                      <FaInstagram />
-                    </span>
-                  </div>
-                </article>
-              </section>
-            );
-          })}
-        </div>
+      
       </section>
     </main>
   );
@@ -284,37 +243,43 @@ export const Team = [
     p: "Collaboration,Communication Skills,Apex, Triggers, Apex Data Loader",
   },
   {
-    img: T7,
+    img: IND_T2,
     h1: "BALACHANDER",
     h2: "Architect",
     p: "IOS SDK,Objective-C,swift,Flutter,Dart,AWS Amplify,Jira,MVVM,MVC",
   },
   {
     img: IND_T3,
-    h1: "MOHAMED IJASS",
-    h2: "UI/UX Lead",
-    p: "Adobe XD,Figma,Web design,Flutter,Interaction design ",
+    h1: "THIRU",
+    h2: "Lead Mobile Developer",
+    p: "RESTful APIs and Web Services,Programming language skills",
   },
   {
     img: IND_T4,
-    h1: "ARTHI",
-    h2: "Web Developer",
-    p: "Javascript,React,Node,Express",
+    h1: "MOHAMED IJASS",
+    h2: "UI/UX Lead",
+    p: "Adobe XD,Figma,Web design,Flutter,Interaction design, ",
   },
   {
     img: IND_T5,
+    h1: "ARTHI",
+    h2: "Web Developer",
+    p: "Javascript, React, Node, Express, MongoDb, Tailwind",
+  },
+  {
+    img: IND_T6,
     h1: "SHUNMUGAM RAJA",
     h2: "Mobile Developer",
     p: "Javascript,React,React Native,Flutter",
   },
   {
-    img: IND_T6,
+    img: IND_T7,
     h1: "VEDAMBIGAI",
     h2: "Digital Marketing",
     p: "Analytics,Social media marketing",
   },
   {
-    img: IND_T7,
+    img: IND_T8,
     h1: "SHERINE",
     h2: "Business Dev",
     p: "Marketing skills,Business intelligence skills",
